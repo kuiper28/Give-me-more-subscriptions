@@ -1,0 +1,37 @@
+
+ Pentru implementarea acestui program am folosit clasele:
+ - Subscriptie
+ - Premium
+ - Basic
+ - Free
+ - FIFOCache
+ - LRUCache
+ - LFUCache
+ - MemoriePrincipala
+ - Main
+De asemenea, am mai fololsit interfata Cache.
+
+Clasa Subscriptie contine toate metodele mostenite in celelate subclase. Dupa ce
+numarul de accesari premium ale unei subscriptii devine 0 aceasta va deveni o
+sbscriptie de tipul basic, acest lucru este realizat prin urcare in lantul de
+mostenire prin intermediul lui "super".(Ex: "super.getBasicnumber()). Daca
+numarul de accesari premium si basic sunt 0, atunci subscriptia va fi de
+tipul Free.
+
+In clasa Main este realizata parsarea informatiilor din fiser si adaugarea
+corespunzatoare a subscriptiilor in memoria principala sau in cache.
+Cache-ul de tipul FIFOCache este implementat prin intermediul unui arrayList,
+asupra lui realizandu-se operatii de timul remove sau add prin intermediul
+diferitelor metode implementate in cod. Analog se intampla si pentru cache-ul
+de tipul LRU si LFU .
+
+Variabila "countNumber" retine numarul de accesari "GET" ale unei subscriptii,
+fiind utilizata ,in principal, pentru memoria de  tip LRU. Variabila "countLFU"
+retine numarul de accesari "GET" ale unei suncriptii din momentul incare aceasta
+a fost adaugata in LFU.
+
+Metoda "setTimeStamp" incrementeaza numarul de accesari "GET" ale unei subscriptii.
+Metoda "setTimeInsert" seteaza timul la care o subscriptie a fost adaugata in
+memorie (Cache sau principala).
+Metoda "setTimeStampLFU" actualizeaza numarul de accesari get ale unei subscriptii
+care se afla in memoria cache de tipul "LFU". 
